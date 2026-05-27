@@ -1,0 +1,66 @@
+.detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.question-item {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.question-text {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.answer-status {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status-correct {
+    background: #d4edda;
+    color: #155724;
+}
+
+.status-incorrect {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.quiz-header {
+    margin-bottom: 24px;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #9b59b6;
+    cursor: pointer;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+}
+
+.total-score {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+h3 {
+    margin-top: 20px;
+    margin-bottom: 15px;
+}

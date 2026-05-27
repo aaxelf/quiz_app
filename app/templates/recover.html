@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Восстановление пароля</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container" style="max-width: 450px; margin: 50px auto;">
+        <div class="card">
+            <h1 style="text-align: center; margin-bottom: 24px;">Восстановление пароля</h1>
+            
+            <div id="successMsg" class="success" style="display: none;"></div>
+            <div id="errorMsg" class="error" style="display: none;"></div>
+            
+            <!-- Шаг 1: Запрос email -->
+            <div id="step1">
+                <div class="info" style="background: #d1ecf1; color: #0c5460; padding: 12px; border-radius: 8px; margin-bottom: 20px; font-size: 14px;">
+                    Введите email, указанный при регистрации.
+                </div>
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <button class="btn-primary" onclick="requestReset()" style="width: 100%;">Отправить</button>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/" style="color: #9b59b6;">← Вернуться на главную</a>
+                </div>
+            </div>
+            
+            <!-- Шаг 2: Ввод нового пароля -->
+            <div id="step2" style="display: none;">
+                <div class="input-group">
+                    <label>Новый пароль</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="newPassword" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('newPassword', this)">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12C4 5 8 3 12 3s8 2 11 9" />
+                                <path d="M23 12c-3 7-7 9-11 9s-8-2-11-9" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <label>Подтверждение пароля</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" required>
+                        <button type="button" class="toggle-password" onclick="togglePassword('confirmPassword', this)">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M1 12C4 5 8 3 12 3s8 2 11 9" />
+                                <path d="M23 12c-3 7-7 9-11 9s-8-2-11-9" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button class="btn-primary" onclick="resetPassword()" style="width: 100%;">Сменить пароль</button>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="/" style="color: #9b59b6;">← Вернуться на главную</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/recover.js"></script>
+</body>
+</html>

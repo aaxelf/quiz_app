@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание квиза</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/quiz_create.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="#9b59b6" stroke-width="1.5" fill="none"/>
+                <path d="M12 8v4l3 3" stroke="#9b59b6" stroke-width="1.5" fill="none"/>
+            </svg>
+            Quiz App
+        </div>
+        <div class="user-info">
+            <span class="user-name" id="userName"></span>
+            <button class="icon-btn" onclick="goToSettings()">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+            </button>
+            <button class="icon-btn" onclick="showLogoutConfirm()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="form-container">
+            <h1>📝 Создание нового квиза</h1>
+            <form id="quizForm">
+                <div class="form-group">
+                    <label>Название квиза *</label>
+                    <input type="text" id="title" required>
+                </div>
+                <div class="form-group">
+                    <label>Описание</label>
+                    <textarea id="description" rows="3"></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Категория</label>
+                    <input type="text" id="category">
+                </div>
+                <div class="form-group">
+                    <label>Время на вопрос (секунды)</label>
+                    <input type="number" id="timePerQuestion" value="30" min="5" max="120">
+                </div>
+                <div class="form-group">
+                    <label>Максимум игроков</label>
+                    <input type="number" id="maxPlayers" value="10" min="1" max="50">
+                </div>
+
+                <h3>Вопросы</h3>
+                <div id="questionsContainer"></div>
+
+                <button type="button" class="add-question-btn" onclick="addQuestion()">+ Добавить вопрос</button>
+
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="cancel()">Отмена</button>
+                    <button type="submit" class="btn-primary">Создать квиз</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>Выход из аккаунта</h3>
+            <p>Вы уверены, что хотите выйти?</p>
+            <div class="modal-buttons">
+                <button class="btn-secondary" onclick="closeLogoutModal()">Отмена</button>
+                <button class="btn-danger" onclick="confirmLogout()">Выйти</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка подтверждения отмены -->
+    <div id="cancelModal" class="modal">
+        <div class="modal-content">
+            <h3>Отмена создания</h3>
+            <p>Все несохранённые данные будут потеряны. Вы уверены?</p>
+            <div class="modal-buttons">
+                <button class="btn-secondary" onclick="closeCancelModal()">Отмена</button>
+                <button class="btn-danger" onclick="confirmCancel()">Выйти</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/quiz_create.js"></script>
+    <script>
+        function goToSettings() { window.location.href = '/profile'; }
+        function showLogoutConfirm() { document.getElementById('logoutModal').classList.add('active'); }
+        function closeLogoutModal() { document.getElementById('logoutModal').classList.remove('active'); }
+        function confirmLogout() { closeLogoutModal(); logout(); }
+    </script>
+</body>
+</html>

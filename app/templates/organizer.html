@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кабинет организатора</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <svg width="28" height="28" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="#9b59b6" stroke-width="1.5" fill="none"/>
+                <path d="M12 8v4l3 3" stroke="#9b59b6" stroke-width="1.5" fill="none"/>
+            </svg>
+            Quiz App
+        </div>
+        <div class="user-info">
+            <span class="user-name" id="userName"></span>
+            <button class="icon-btn" onclick="goToSettings()">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                </svg>
+            </button>
+            <button class="icon-btn" onclick="showLogoutConfirm()">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                    <polyline points="16 17 21 12 16 7"/>
+                    <line x1="21" y1="12" x2="9" y2="12"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="container">
+        <button class="btn-primary" onclick="createQuiz()">
+            <svg width="18" height="18" viewBox="0 0 24 24">
+                <line x1="12" y1="5" x2="12" y2="19" stroke="white" stroke-width="2"/>
+                <line x1="5" y1="12" x2="19" y2="12" stroke="white" stroke-width="2"/>
+            </svg>
+            Создать новый квиз
+        </button>
+
+        <button class="btn-primary" onclick="importQuiz()">
+            <svg width="18" height="18" viewBox="0 0 24 24" stroke="white" stroke-width="2" fill="none">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            Импортировать квизы
+        </button>
+        <button class="btn-secondary" onclick="exportAllQuizzes()">
+            <svg width="18" height="18" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 5 17 10" />
+                <line x1="12" y1="5" x2="12" y2="15" />
+            </svg>
+            Экспортировать все квизы
+        </button>
+
+        <!-- Модалка для кода сессии -->
+        <div id="sessionCodeModal" class="modal">
+            <div class="modal-content" style="text-align: center;">
+                <h3>🎯 Сессия создана!</h3>
+                <p>Квиз: <strong id="sessionQuizTitle"></strong></p>
+                <p style="font-size: 48px; letter-spacing: 8px; font-weight: bold; margin: 20px 0;" id="sessionCodeDisplay"></p>
+                <p>Отправьте этот код участникам для входа в игру.</p>
+                <div class="modal-buttons">
+                    <button class="btn-primary" onclick="copySessionCode()">📋 Скопировать</button>
+                    <button class="btn-secondary" onclick="closeSessionCodeModal()">Закрыть</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Панель активных сессий -->
+        <div class="sessions-panel">
+            <div class="sessions-header">
+                <h3>🎯 Активные сессии</h3>
+                <button class="btn-secondary" onclick="refreshSessions()">Обновить</button>
+            </div>
+            <div id="sessionsList" class="sessions-list">
+                <div class="empty-state">Нет активных сессий</div>
+            </div>
+        </div>
+
+        <!-- Панель сортировки -->
+        <div style="display: flex; gap: 10px; margin: 20px 0; align-items: center; flex-wrap: wrap;">
+            <span style="color: #666;">Сортировать:</span>
+            <button class="sort-btn" id="sort-date" onclick="setSort('date')">По дате ↓</button>
+            <button class="sort-btn" id="sort-name" onclick="setSort('name')">По названию</button>
+            <button class="sort-btn" id="sort-plays" onclick="setSort('plays')">По играм</button>
+        </div>
+
+        <div id="quizzesList" class="quizzes-grid">
+            <div class="loading">Загрузка...</div>
+        </div>
+    </div>
+
+    <!-- Модалка удаления квиза -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h3>Удалить квиз?</h3>
+            <p>Вы уверены, что хотите удалить этот квиз?<br>Это действие нельзя отменить.</p>
+            <div class="modal-buttons">
+                <button class="btn-secondary" onclick="closeDeleteModal()">Отмена</button>
+                <button class="btn-danger" onclick="confirmDelete()">Удалить</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модалка выхода -->
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+            <h3>Выход из аккаунта</h3>
+            <p>Вы уверены, что хотите выйти?</p>
+            <div class="modal-buttons">
+                <button class="btn-secondary" onclick="closeLogoutModal()">Отмена</button>
+                <button class="btn-danger" onclick="confirmLogout()">Выйти</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/common.js"></script>
+    <script src="/static/js/organizer.js"></script>
+
+    <div id="codeModal" class="modal">
+        <div class="modal-content" style="text-align: center;">
+            <h3>🎯 Код комнаты</h3>
+            <p style="font-size: 48px; letter-spacing: 8px; font-weight: bold; margin: 20px 0;" id="roomCodeDisplay"></p>
+            <p>Отправьте этот код участникам, чтобы они могли присоединиться к игре.</p>
+            <div class="modal-buttons">
+                <button class="btn-primary" onclick="copyRoomCode()">📋 Скопировать</button>
+                <button class="btn-secondary" onclick="closeCodeModal()">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function importQuiz() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            
+            input.onchange = function(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+                
+                const formData = new FormData();
+                formData.append('file', file);
+                
+                const userId = localStorage.getItem('userId');
+                
+                fetch(`/quizzes/import?organizer_id=${userId}`, {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.quiz_id) {
+                        alert('Квиз успешно импортирован!');
+                        location.reload();
+                    } else {
+                        alert('Ошибка: ' + (data.detail || 'Неизвестная ошибка'));
+                    }
+                })
+                .catch(() => alert('Ошибка соединения с сервером'));
+            };
+            
+            input.click();
+        }
+    </script>
+</body>
+</html>
