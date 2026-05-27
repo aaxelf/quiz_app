@@ -1,0 +1,501 @@
+[
+  {
+    "id": 4,
+    "organizer_id": 1,
+    "title": "Достопримечательности",
+    "description": "Квиз по достопримечательностям",
+    "category": "География",
+    "max_players": 10,
+    "cover_image_url": null,
+    "time_per_question_sec": 9,
+    "reveal_duration_sec": 3,
+    "leaderboard_duration_sec": 5,
+    "is_published": true,
+    "play_count": 0,
+    "created_at": "2026-05-26 23:16:52.581180+03:00",
+    "updated_at": "2026-05-26 23:16:52.581180+03:00",
+    "questions": [
+      {
+        "id": 8,
+        "quiz_id": 4,
+        "order_index": 0,
+        "question_type": "text",
+        "question_text": "В каком городе находится эта достопримечательность?",
+        "image_url": "https://res.cloudinary.com/aenetworks/image/upload/c_fill,ar_2,w_3840,h_1920,g_auto/dpr_auto/f_auto/q_auto:eco/v1/the-sphinx-gettyimages-1183584133?_a=BAVMn6DY0",
+        "answer_mode": "single",
+        "points": 30,
+        "time_limit_sec": null,
+        "created_at": "2026-05-26 23:16:52.581180+03:00",
+        "options": [
+          {
+            "id": 25,
+            "question_id": 8,
+            "option_text": "Каир",
+            "is_correct": true,
+            "order_index": 0
+          },
+          {
+            "id": 26,
+            "question_id": 8,
+            "option_text": "Хургада",
+            "is_correct": false,
+            "order_index": 1
+          },
+          {
+            "id": 27,
+            "question_id": 8,
+            "option_text": "Дамаск",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "quiz_id": 4,
+        "order_index": 1,
+        "question_type": "text",
+        "question_text": "В каком городе находится эта достопримечательность?",
+        "image_url": "https://metro.co.uk/wp-content/uploads/2024/04/SEI_201265137-11d2.jpg?quality=90&strip=all&w=646",
+        "answer_mode": "single",
+        "points": 30,
+        "time_limit_sec": null,
+        "created_at": "2026-05-26 23:16:52.581180+03:00",
+        "options": [
+          {
+            "id": 28,
+            "question_id": 9,
+            "option_text": "Париж",
+            "is_correct": false,
+            "order_index": 0
+          },
+          {
+            "id": 29,
+            "question_id": 9,
+            "option_text": "Лондон",
+            "is_correct": true,
+            "order_index": 1
+          },
+          {
+            "id": 30,
+            "question_id": 9,
+            "option_text": "Нью-Йорк",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "organizer_id": 1,
+    "title": "Флаги и столицы",
+    "description": "Квиз по флагам и столицам",
+    "category": "География",
+    "max_players": 10,
+    "cover_image_url": null,
+    "time_per_question_sec": 10,
+    "reveal_duration_sec": 3,
+    "leaderboard_duration_sec": 5,
+    "is_published": true,
+    "play_count": 0,
+    "created_at": "2026-05-26 23:16:52.626149+03:00",
+    "updated_at": "2026-05-26 23:16:52.626149+03:00",
+    "questions": [
+      {
+        "id": 10,
+        "quiz_id": 5,
+        "order_index": 0,
+        "question_type": "text",
+        "question_text": "Столица какой страны Братислава?",
+        "image_url": null,
+        "answer_mode": "single",
+        "points": 40,
+        "time_limit_sec": null,
+        "created_at": "2026-05-26 23:16:52.626149+03:00",
+        "options": [
+          {
+            "id": 31,
+            "question_id": 10,
+            "option_text": "Словения",
+            "is_correct": false,
+            "order_index": 0
+          },
+          {
+            "id": 32,
+            "question_id": 10,
+            "option_text": "Словакия",
+            "is_correct": true,
+            "order_index": 1
+          },
+          {
+            "id": 33,
+            "question_id": 10,
+            "option_text": "Черногория",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "quiz_id": 5,
+        "order_index": 1,
+        "question_type": "text",
+        "question_text": "У какой страны такой флаг?",
+        "image_url": "https://i0.wp.com/flag-shop.ca/wp-content/uploads/2024/11/img-flag-shop-flags-of-the-world-moldova-flag-2-3.webp?w=1080&ssl=1",
+        "answer_mode": "single",
+        "points": 40,
+        "time_limit_sec": null,
+        "created_at": "2026-05-26 23:16:52.626149+03:00",
+        "options": [
+          {
+            "id": 34,
+            "question_id": 11,
+            "option_text": "Молдова",
+            "is_correct": true,
+            "order_index": 0
+          },
+          {
+            "id": 35,
+            "question_id": 11,
+            "option_text": "Румыния",
+            "is_correct": false,
+            "order_index": 1
+          },
+          {
+            "id": 36,
+            "question_id": 11,
+            "option_text": "Андорра",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "organizer_id": 1,
+    "title": "Языки",
+    "description": "Квиз по языкам",
+    "category": "Языки, география",
+    "max_players": 10,
+    "cover_image_url": null,
+    "time_per_question_sec": 15,
+    "reveal_duration_sec": 3,
+    "leaderboard_duration_sec": 5,
+    "is_published": true,
+    "play_count": 0,
+    "created_at": "2026-05-26 23:16:52.643892+03:00",
+    "updated_at": "2026-05-26 21:08:26.487833+03:00",
+    "questions": [
+      {
+        "id": 18,
+        "quiz_id": 6,
+        "order_index": 0,
+        "question_type": "text",
+        "question_text": "Какие языки не являются государственными в Швейцарии?",
+        "image_url": null,
+        "answer_mode": "multiple",
+        "points": 30,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:08:26.486591+03:00",
+        "options": [
+          {
+            "id": 61,
+            "question_id": 18,
+            "option_text": "Итальянский",
+            "is_correct": false,
+            "order_index": 0
+          },
+          {
+            "id": 62,
+            "question_id": 18,
+            "option_text": "Немецкий",
+            "is_correct": false,
+            "order_index": 1
+          },
+          {
+            "id": 63,
+            "question_id": 18,
+            "option_text": "Английский",
+            "is_correct": true,
+            "order_index": 2
+          },
+          {
+            "id": 64,
+            "question_id": 18,
+            "option_text": "Испанский",
+            "is_correct": true,
+            "order_index": 3
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "quiz_id": 6,
+        "order_index": 1,
+        "question_type": "text",
+        "question_text": "Какие языки обязательны для изучения в школах Катара?",
+        "image_url": null,
+        "answer_mode": "multiple",
+        "points": 30,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:08:26.486591+03:00",
+        "options": [
+          {
+            "id": 65,
+            "question_id": 19,
+            "option_text": "Арабский",
+            "is_correct": true,
+            "order_index": 0
+          },
+          {
+            "id": 66,
+            "question_id": 19,
+            "option_text": "Английский",
+            "is_correct": true,
+            "order_index": 1
+          },
+          {
+            "id": 67,
+            "question_id": 19,
+            "option_text": "Французский",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "quiz_id": 6,
+        "order_index": 2,
+        "question_type": "text",
+        "question_text": "Какие языки не являются государственными в ЮАР?",
+        "image_url": null,
+        "answer_mode": "multiple",
+        "points": 30,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:08:26.486591+03:00",
+        "options": [
+          {
+            "id": 68,
+            "question_id": 20,
+            "option_text": "Английский",
+            "is_correct": false,
+            "order_index": 0
+          },
+          {
+            "id": 69,
+            "question_id": 20,
+            "option_text": "Французский",
+            "is_correct": true,
+            "order_index": 1
+          },
+          {
+            "id": 70,
+            "question_id": 20,
+            "option_text": "Зулу",
+            "is_correct": false,
+            "order_index": 2
+          },
+          {
+            "id": 71,
+            "question_id": 20,
+            "option_text": "Арабский",
+            "is_correct": true,
+            "order_index": 3
+          },
+          {
+            "id": 72,
+            "question_id": 20,
+            "option_text": "Африкаанс",
+            "is_correct": false,
+            "order_index": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "organizer_id": 1,
+    "title": "Лунтик",
+    "description": "Квиз на знание героев мультика \"Лунтик\"",
+    "category": "Мультики",
+    "max_players": 10,
+    "cover_image_url": null,
+    "time_per_question_sec": 10,
+    "reveal_duration_sec": 3,
+    "leaderboard_duration_sec": 5,
+    "is_published": true,
+    "play_count": 0,
+    "created_at": "2026-05-27 00:30:01.377935+03:00",
+    "updated_at": "2026-05-27 00:30:01.377935+03:00",
+    "questions": [
+      {
+        "id": 21,
+        "quiz_id": 7,
+        "order_index": 0,
+        "question_type": "text",
+        "question_text": "Кто слева?",
+        "image_url": "https://static.kinoafisha.info/k/articles/1200/upload/articles/102846042035.jpg.webp",
+        "answer_mode": "single",
+        "points": 20,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:30:01.377935+03:00",
+        "options": [
+          {
+            "id": 73,
+            "question_id": 21,
+            "option_text": "Пупсень",
+            "is_correct": false,
+            "order_index": 0
+          },
+          {
+            "id": 74,
+            "question_id": 21,
+            "option_text": "Вупсень",
+            "is_correct": true,
+            "order_index": 1
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "quiz_id": 7,
+        "order_index": 1,
+        "question_type": "text",
+        "question_text": "А справа?",
+        "image_url": "https://static.kinoafisha.info/k/articles/1200/upload/articles/102846042035.jpg.webp",
+        "answer_mode": "single",
+        "points": 20,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:30:01.377935+03:00",
+        "options": [
+          {
+            "id": 75,
+            "question_id": 22,
+            "option_text": "Пупсень",
+            "is_correct": true,
+            "order_index": 0
+          },
+          {
+            "id": 76,
+            "question_id": 22,
+            "option_text": "Вупсень",
+            "is_correct": false,
+            "order_index": 1
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "quiz_id": 7,
+        "order_index": 2,
+        "question_type": "text",
+        "question_text": "Как зовут лучшего друга Лунтика?",
+        "image_url": null,
+        "answer_mode": "single",
+        "points": 20,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:30:01.377935+03:00",
+        "options": [
+          {
+            "id": 77,
+            "question_id": 23,
+            "option_text": "Кузя",
+            "is_correct": true,
+            "order_index": 0
+          },
+          {
+            "id": 78,
+            "question_id": 23,
+            "option_text": "Шнюк",
+            "is_correct": false,
+            "order_index": 1
+          },
+          {
+            "id": 79,
+            "question_id": 23,
+            "option_text": "Шер",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "quiz_id": 7,
+        "order_index": 3,
+        "question_type": "text",
+        "question_text": "Как её зовут?",
+        "image_url": "https://babr24.com/n2p/i/2023/2/screenshot_2_08191949_b.jpg",
+        "answer_mode": "single",
+        "points": 20,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:30:01.377935+03:00",
+        "options": [
+          {
+            "id": 80,
+            "question_id": 24,
+            "option_text": "Мила",
+            "is_correct": true,
+            "order_index": 0
+          },
+          {
+            "id": 81,
+            "question_id": 24,
+            "option_text": "Маша",
+            "is_correct": false,
+            "order_index": 1
+          },
+          {
+            "id": 82,
+            "question_id": 24,
+            "option_text": "Мина",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "quiz_id": 7,
+        "order_index": 4,
+        "question_type": "text",
+        "question_text": "Как зовут маму Лунтика?",
+        "image_url": "https://sun9-30.userapi.com/s/v1/ig2/XsJloXFjLf_6AuOaMK1PGEDXN8A234ntaLgEyMrCEQv6jsIguQWiyb-V9VDhteMReEgqwUrHOD8ZbT4gBRovrGAh.jpg?quality=96&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480&from=bu&u=0lj2_6ywC8IfZqaI4OuhBuo7uZ7VYhOcVQE0UET1QhA&cs=640x0",
+        "answer_mode": "single",
+        "points": 20,
+        "time_limit_sec": null,
+        "created_at": "2026-05-27 00:30:01.377935+03:00",
+        "options": [
+          {
+            "id": 83,
+            "question_id": 25,
+            "option_text": "Тётя Мотя",
+            "is_correct": false,
+            "order_index": 0
+          },
+          {
+            "id": 84,
+            "question_id": 25,
+            "option_text": "Баба Капа",
+            "is_correct": true,
+            "order_index": 1
+          },
+          {
+            "id": 85,
+            "question_id": 25,
+            "option_text": "Мэри Поппинс",
+            "is_correct": false,
+            "order_index": 2
+          }
+        ]
+      }
+    ]
+  }
+]
